@@ -1,6 +1,6 @@
 # ECharts 学习记录
 
-# 柱线图
+## 柱线图
 
 ```TypeScript
 // 提示框组件
@@ -183,7 +183,7 @@ series: [
 ],
 ```
 
-# 饼图
+## 饼图
 
 ```TypeScript
 const colorList = useMemo(() => {

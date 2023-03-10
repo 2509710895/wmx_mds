@@ -1,6 +1,6 @@
 # Ant Design 学习记录
 
-# Ant Table
+## Ant Table
 
 ```TypeScript
 const columns: any = [
@@ -200,52 +200,51 @@ const columns: any = [
 ];
 ```
 
-## Table组件 每一条记录的组成部分事件绑定 
+### Table 组件 每一条记录的组成部分事件绑定
 
 ```javascript
-{    
-  title: '产品名称',    
-  dataIndex: 'goodName',    
-  render: text => <Link to='/index/detail'>{text}</Link>, 
-} 
+{
+  title: '产品名称',
+  dataIndex: 'goodName',
+  render: text => <Link to='/index/detail'>{text}</Link>,
+}
 //在render 里渲染的Node里绑定
 ```
 
-# Ant Form
+## Ant Form
 
-## Form组件 默认值设置 
+### Form 组件 默认值设置
 
 ```javascript
-<Form    
-	initialValues={{        
-    item1: 3,        
-    item2: 2,        
-    item3: 1000,        
-    item4: 3,        
-    item5: 18,    
-	}} 
-> 
+<Form
+	initialValues={{
+    item1: 3,
+    item2: 2,
+    item3: 1000,
+    item4: 3,
+    item5: 18,
+	}}
+>
   //item1 是form.item的name属性，后面是默认值
 ```
 
-# 全局化配置中文 
+## 全局化配置中文
 
 ```javascript
-import React from 'react' 
-import Main from './components/Main/Main'; 
-import { ConfigProvider } from 'antd'; 
-import zh_CN from 'antd/lib/locale-provider/zh_CN'; 
-import 'moment/locale/zh-cn'; 
-import 'antd/dist/antd.css' 
-import './App.css'; 
-export default function App() {  
-  return (    
-    <div className="App">      
-    	<ConfigProvider locale={zh_CN}>        
-  			<Main />      
-  		</ConfigProvider>    
-		</div>  
-	) 
-} 
+import React from "react";
+import Main from "./components/Main/Main";
+import { ConfigProvider } from "antd";
+import zh_CN from "antd/lib/locale-provider/zh_CN";
+import "moment/locale/zh-cn";
+import "antd/dist/antd.css";
+import "./App.css";
+export default function App() {
+  return (
+    <div className="App">
+      <ConfigProvider locale={zh_CN}>
+        <Main />
+      </ConfigProvider>
+    </div>
+  );
+}
 ```
-

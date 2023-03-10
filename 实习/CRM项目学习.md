@@ -1,15 +1,15 @@
-# CRM项目学习
+# CRM 项目学习
 
-# 个人感悟
+## 个人感悟
 
-## 如何快速定位所需要修改的代码
+### 如何快速定位所需要修改的代码
 
 - 根据页面上一些特定的文字，使用 VSCode 的搜索
 - 根据需求中发起的链接锁定
 
-# 业务需求
+## 业务需求
 
-## 选择器
+### 选择器
 
 ```TypeScript
 // 源码
@@ -96,7 +96,7 @@ export default Selector;
 />
 ```
 
-## Antd 组件粘贴图片
+### Antd 组件粘贴图片
 
 ```CSS
 import { useEventListener } from 'ahooks';
@@ -130,7 +130,7 @@ useEventListener('paste', async event => {
 });
 ```
 
-## 埋点
+### 埋点
 
 ```TypeScript
 // 埋点源码
@@ -729,20 +729,20 @@ voyagerTrack('crm_my_customer_ff_click', {
 });
 ```
 
-# 浏览器
+## 浏览器
 
-## 获取页面打开方式
+### 获取页面打开方式
 
 ```TypeScript
 performance.getEntriesByType('navigation')
 // reload 点击刷新 window.performance.navigation.type=1
 // navigate 通过点击链接或输入链接 window.performance.navigation.type=0
 // back_forword 后退
-// 
+//
 document.referrer  // 当前一页的上一页
 ```
 
-# CSS 样式
+## CSS 样式
 
 问题：当屏幕过小，页面高度过高，无法查看页面以下的部分
 
@@ -764,7 +764,7 @@ document.referrer  // 当前一页的上一页
 border-collapse: collapse;/* 合并相邻边框*/
 ```
 
-# React
+## React
 
 空格问题：在字符串中输入连续的多个空格，页面只显示一个
 
@@ -775,7 +775,7 @@ const str="12 34   123"
 <pre>{str}</pre>
 ```
 
-# TypeScript 语法
+## TypeScript 语法
 
 [TypeScript 学习](https://maimai.feishu.cn/docx/Dm88drJZOoK0fexe1RfcktGQnKg)
 
@@ -785,11 +785,11 @@ const str="12 34   123"
 function OpportunityTable<T>({
     dataSource,
     loading,
-    // customerType字段本不在 TableCardProps 中，使用 & 进行兼容 
+    // customerType字段本不在 TableCardProps 中，使用 & 进行兼容
     customerType = 0,
     ...rest
 }: TableCardProps<T> & { customerType?: number }){
-    
+
 }
 ```
 
@@ -814,7 +814,7 @@ ReturnType
 type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
 ```
 
-# Less 语法
+## Less 语法
 
 ```CSS
 /*
@@ -825,7 +825,7 @@ type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => i
 类名为 p 的元素的后代中类名为 s 的元素
 .p .s{
     yyy
-} 
+}
 */
 .p{
     xxx
@@ -842,7 +842,7 @@ type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => i
 类名中同时有 p 和 s 的元素
 .p .s{
     yyy
-} 
+}
 */
 .p{
     xxx
@@ -852,80 +852,80 @@ type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => i
 }
 ```
 
-# 第三方库
+## 第三方库
 
-## lodash
+### lodash
 
 [lodash 官网](https://www.lodashjs.com/)
 
 [Lodash 常用函数记录](https://maimai.feishu.cn/docx/CH9edy0dTorp8kx5PnBcABVfnke)
 
-## ahooks
+### ahooks
 
 [官网](https://ahooks.js.org/zh-CN/hooks/use-debounce)
 
 [ahooks 学习记录](https://maimai.feishu.cn/docx/Tk8vdE0JnoJd1sxhV6scIGRdnSe)
 
-## SWR
+### SWR
 
-[SWR github链接](https://github.com/vercel/swr)
+[SWR github 链接](https://github.com/vercel/swr)
 
 [SWR 学习记录](https://maimai.feishu.cn/docx/S85ddodnmod7dZxwrincA7tRnWe)
 
-## Antd
+### Antd
 
 [Antd3.x 官网](https://3x.ant.design/docs/react/introduce-cn)
 
 [Antd 学习记录](https://maimai.feishu.cn/docx/KmxddilPzozLhaxNUUdcScXWnRf)
 
-## ECharts
+### ECharts
 
 https://echarts.apache.org/zh/option.html#title
 
 [ECharts 学习记录](https://maimai.feishu.cn/docx/MN7ZdSZRhoWxFpxjIoIcuhWLnMc)
 
-## Next.js
+### Next.js
 
 [官网](https://www.nextjs.cn/)
 
 [Next.js 学习记录](https://maimai.feishu.cn/docx/UDsJdjXzjoM4YCxix8Mc0H25nAd)
 
-## Mobx
+### Mobx
 
 [mobx 中文文档](https://cn.mobx.js.org/)
 
-**Mobx是简单、可扩展的状态管理库**。是经过战斗洗礼的库，通过透明的函数响应式编程使状态管理变得更加简单且可扩展。（类似 Redux ）
+**Mobx 是简单、可扩展的状态管理库**。是经过战斗洗礼的库，通过透明的函数响应式编程使状态管理变得更加简单且可扩展。（类似 Redux ）
 
-### 问题：
+#### 问题：
 
 1. 为什么使用 mobx 而不是 redux
 
 答：
 
-1. mobx和Redux的区别
+1. mobx 和 Redux 的区别
 
-**编程思想不同** 
+**编程思想不同**
 
 Mobx 遵循面向对象编程思想，redux 遵循函数式编程思想
 
-**store的区别** 
+**store 的区别**
 
-redux的store集合了一整个应用的状态，mobx按模块将应用状态划分，在多个独立的store中管理
+redux 的 store 集合了一整个应用的状态，mobx 按模块将应用状态划分，在多个独立的 store 中管理
 
-**存储数据的形式不一样** 
+**存储数据的形式不一样**
 
-Redux以 js 原生对象形式存储数据，mobx 可以自定义一个类创建一个对象
+Redux 以 js 原生对象形式存储数据，mobx 可以自定义一个类创建一个对象
 
-1. Redux需要手动追踪所有状态对象的变更；
-2. Mobx中可以监听可观察对象，当其变更时将自动触发监听；
+1. Redux 需要手动追踪所有状态对象的变更；
+2. Mobx 中可以监听可观察对象，当其变更时将自动触发监听；
 
-**操作对象的方式不一样** 
+**操作对象的方式不一样**
 
-redux不能直接操作状态对象，而是需要在原有的对象基础上返回一个新的状态对象。mobx可以直接使用新值在原来状态对象上进行更新
+redux 不能直接操作状态对象，而是需要在原有的对象基础上返回一个新的状态对象。mobx 可以直接使用新值在原来状态对象上进行更新
 
 **代码对比**
 
-在Redux应用中，我们首先需要配置，创建store，并使用redux-thunk或redux-saga中间件以支持异步action，然后使用Provider将store注入应用：
+在 Redux 应用中，我们首先需要配置，创建 store，并使用 redux-thunk 或 redux-saga 中间件以支持异步 action，然后使用 Provider 将 store 注入应用：
 
 ```JavaScript
 // src/store.jsimport { applyMiddleware, createStore } from "redux";
@@ -949,7 +949,7 @@ ReactDOM.render(
 );
 ```
 
-Mobx应用则可以直接将所有store注入应用：
+Mobx 应用则可以直接将所有 store 注入应用：
 
 ```JavaScript
 import React from 'react';
@@ -970,7 +970,7 @@ render(
 复制代码
 ```
 
-**Props的注入不同**
+**Props 的注入不同**
 
 - Redux
 
@@ -1023,21 +1023,21 @@ class CompanyContainer extends Component {
 }
 ```
 
-## Sentry 
+### Sentry
 
-sentry是一个基于Django构建的现代化的实时事件日志监控、记录和聚合平台,主要用于如何快速的发现故障。支持几乎所有主流开发语言和平台,并提供了现代化UI,它专门用于监视错误和提取执行适当的事后操作所需的所有信息,而无需使用标准用户反馈循环的任何麻烦。
+sentry 是一个基于 Django 构建的现代化的实时事件日志监控、记录和聚合平台,主要用于如何快速的发现故障。支持几乎所有主流开发语言和平台,并提供了现代化 UI,它专门用于监视错误和提取执行适当的事后操作所需的所有信息,而无需使用标准用户反馈循环的任何麻烦。
 
-# crm 项目文档
+## crm 项目文档
 
-[CRM 项目有关于 Form 表单组件的文档](https://maimai.feishu.cn/wiki/wikcnjG6Uv8WigpV1KxYYKvjqqh) 
+[CRM 项目有关于 Form 表单组件的文档](https://maimai.feishu.cn/wiki/wikcnjG6Uv8WigpV1KxYYKvjqqh)
 
-# git 使用
+## git 使用
 
-## 同步远程代码
+### 同步远程代码
 
 `git fetch && git reset --hard origin/远程分支名` 同步远程代码
 
-## master 分支合并本地分支
+### master 分支合并本地分支
 
 `git checkout master` 切换到 master 分支
 
@@ -1045,12 +1045,12 @@ sentry是一个基于Django构建的现代化的实时事件日志监控、记�
 
 `git push` 推送代码
 
-## 本地某一分支同步远端分支
+### 本地某一分支同步远端分支
 
 `git checkout master` 切换到 master 分支
 
 `git fetch && git reset --hard origin/远程分支名` 同步远程代码
 
-`git checkout feat-xxx`  切换到本地 feat-xxx 分支
+`git checkout feat-xxx` 切换到本地 feat-xxx 分支
 
 `git rebase master` 同步 master 分支
