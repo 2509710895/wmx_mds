@@ -768,7 +768,7 @@ border-collapse: collapse;/* 合并相邻边框*/
 
 空格问题：在字符串中输入连续的多个空格，页面只显示一个
 
-解决办法：使用<pre></pre>标签
+解决办法：使用` <pre></pre>` 标签
 
 ```TypeScript
 const str="12 34   123"
