@@ -744,7 +744,7 @@ document.referrer  // 当前一页的上一页
 
 ## CSS 样式
 
-问题：当屏幕过小，页面高度过高，无法查看页面以下的部分
+### 问题：当屏幕过小，页面高度过高，无法查看页面以下的部分
 
 ```CSS
 {
@@ -758,21 +758,61 @@ document.referrer  // 当前一页的上一页
 }
 ```
 
-合并边框
+### 合并边框
 
 ```TypeScript
 border-collapse: collapse;/* 合并相邻边框*/
 ```
 
+### 在宽度未知的情况下，实现一个正方形
+
+```html
+<div class="square3">
+  <img src="images/square.jpg" class="squareimg2"/>
+</div>
+```
+
+```css
+.square3{
+  	width:33%
+    padding-bottom:33%;
+  	/* width 是百分之几，padding-bottom 就写百分之几 */
+    height: 0;
+    position: relative;
+} 
+.squareimg2{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+  	/* 图片居中显示 */
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+```
+
 ## React
 
-空格问题：在字符串中输入连续的多个空格，页面只显示一个
+### 问题：在字符串中输入连续的多个空格，页面只显示一个
 
 解决办法：使用` <pre></pre>` 标签
 
 ```TypeScript
 const str="12 34   123"
 <pre>{str}</pre>
+```
+
+### 问题：useEffect 在组件挂载时不执行
+
+解决方法：使用 ahooks 中的 useUpdateEffect
+
+```javascript
+import { useUpdateEffect } from 'ahooks';
+const fn=()=>{
+  useUpdateEffect(() => {
+      getHomeNewPerformanceOptData();
+  }, [homeNewSelectedData, homeNewFilterData]);
+  return <div>APP</div>
+}
 ```
 
 ## TypeScript 语法
