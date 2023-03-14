@@ -729,6 +729,32 @@ voyagerTrack('crm_my_customer_ff_click', {
 });
 ```
 
+### 权限控制
+
+```
+const authView = useCallback(
+          (name: string) => {
+              const isShow =
+                  name === '全国'
+                      ? data?.viewOrgType === '6'
+                      : !!data?.dataBoardOrgList?.find(org => {
+                            return name.split(',').includes(org.orgName || '');
+                        });
+              return isShow;
+          },
+          [data],
+    );
+
+const authViewWithComponent = (name: string) => {
+	const isShow = authView(name);
+	return (component: React.ReactNode) => {
+		return isShow ? component : null;
+	};
+};
+```
+
+
+
 ## 浏览器
 
 ### 获取页面打开方式
